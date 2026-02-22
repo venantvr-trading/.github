@@ -44,20 +44,17 @@ Plateforme de trading algorithmique crypto multi-exchange (Binance, Gate.io, KuC
 
 ## Évolution architecturale
 
-```
-Python.Trading.Risk (monolithe)
-        │
-        │ refactoring événementiel
-        ▼
-Python.PubSub.Risk (29 agents, 43 événements Pydantic)
-        │
-        ├── Scanner ─────── Introspection du code → graphes DOT
-        │                   Analyse statique des flux d'événements
-        │
-        └── DevTools ────── Record/Replay d'événements
-                            Mock Exchange (simulation)
-                            Chaos Engineering (injection de pannes)
-                            Scenario Testing (assertions)
+```mermaid
+graph TD
+    M[Python.Trading.Risk<br/><i>Monolithe</i>] -->|refactoring événementiel| E[Python.PubSub.Risk<br/><i>29 agents · 43 événements Pydantic</i>]
+
+    E --> SC[Scanner<br/><i>Introspection du code → graphes DOT</i>]
+    E --> DT[DevTools]
+
+    DT --> R[Record / Replay]
+    DT --> MX[Mock Exchange]
+    DT --> CH[Chaos Engineering]
+    DT --> ST[Scenario Testing]
 ```
 
 ## Stack
