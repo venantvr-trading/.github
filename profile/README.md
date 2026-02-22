@@ -59,6 +59,9 @@ graph TD
 
 ## Stack
 
+[![Stack](https://skillicons.dev/icons?i=python,docker,redis,rabbitmq,linux,git&theme=dark)](https://skillicons.dev)
+
+
 - **Python** exclusivement, licences MIT
 - **5 exchanges** supportés via ccxt : Binance, Gate.io, KuCoin, OKX, Bybit
 - **Pydantic** pour le typage strict des 43 événements
